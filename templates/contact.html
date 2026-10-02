@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Contact - GlowUp</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        💄 GlowUp
+    </div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/tutorials">Tutorials</a>
+        <a href="/products">Products</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<section class="page">
+
+    <h1>Contact Us</h1>
+
+    <div class="contact-card">
+
+        <h2>We'd Love to Hear From You 💕</h2>
+
+        <p>
+            Have a makeup question or tutorial suggestion?
+            Send us a message.
+        </p>
+
+        <form onsubmit="sendMessage(event)">
+
+            <label>Name</label>
+
+            <input
+                type="text"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label>Message</label>
+
+            <textarea
+                placeholder="Write your message..."
+                required>
+            </textarea>
+
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>© 2026 GlowUp Makeup Tutorials</p>
+
+</footer>
+
+
+<script>
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    alert("Thank you! Your message has been submitted.");
+
+}
+
+</script>
+
+</body>
+</html>
