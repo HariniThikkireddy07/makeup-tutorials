@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Makeup Products</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        💄 GlowUp
+    </div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/tutorials">Tutorials</a>
+        <a href="/products">Products</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<section class="page">
+
+    <h1>Makeup Products Guide</h1>
+
+    <p class="page-intro">
+        Understand the purpose of common makeup products.
+    </p>
+
+
+    <div class="product-container">
+
+        {% for product in products %}
+
+        <div class="product-card">
+
+            <div class="product-icon">
+                💋
+            </div>
+
+            <h2>{{ product.name }}</h2>
+
+            <span class="product-category">
+                {{ product.category }}
+            </span>
+
+            <p>
+                {{ product.description }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>© 2026 GlowUp Makeup Tutorials</p>
+
+</footer>
+
+</body>
+</html>
