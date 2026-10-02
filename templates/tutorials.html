@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Makeup Tutorials</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        💄 GlowUp
+    </div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/tutorials">Tutorials</a>
+        <a href="/products">Products</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<section class="page">
+
+    <h1>Makeup Tutorials</h1>
+
+    <p class="page-intro">
+        Step-by-step makeup tutorials for different occasions.
+    </p>
+
+
+    <div class="tutorial-container">
+
+        {% for tutorial in tutorials %}
+
+        <div class="tutorial-card">
+
+            <div class="tutorial-icon">
+                💄
+            </div>
+
+            <h2>{{ tutorial.title }}</h2>
+
+            <div class="details">
+
+                <span>{{ tutorial.level }}</span>
+
+                <span>{{ tutorial.time }}</span>
+
+            </div>
+
+            <p>
+                {{ tutorial.description }}
+            </p>
+
+            <button onclick="startTutorial('{{ tutorial.title }}')">
+                Start Tutorial
+            </button>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>© 2026 GlowUp Makeup Tutorials</p>
+
+</footer>
+
+
+<script>
+
+function startTutorial(title) {
+
+    alert("Starting tutorial: " + title);
+
+}
+
+</script>
+
+</body>
+</html>
